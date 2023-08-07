@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(243, 228, 211);
+}
+
+
+.question{
+ 
+     border-style:solid;
+    
+    
+    height: 500px;
+    width: 90%;
+    padding-left: 20px;
+    margin: 60px;
+    border-radius: 40px;
+    box-shadow: 10px 10px 40px rgb(220, 164, 220);
+    border-style: hidden;
+    
+    
+   
+   
+    
+  
+    
+    
+
+
+}
+.question:hover{
+    
+}
+h3{
+
+    padding: 70px 0px 30px 60px;
+    font-size: 140%;
+
+}
+ul{
+    display: inline-block;
+}
+input{
+    margin: 20px;
+    
+}
+span{
+    font-size: 130%;
+}
+
+#buttons{
+    margin-left: 80%;
+    padding: 5px 15px ;
+    
+
+}
+
+label{
+    font-size: 130%;
+}
+

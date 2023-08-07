@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Website</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Quiz Website</h1>
+    <div id="login-form">
+      <input type="text" id="name" placeholder="Enter your name">
+      <button onclick="login()">Login</button>
+    </div>
+    <div id="greeting" style="display: none;"></div>
+    <div class="quiz-container">
+      <div class="quiz-type" onclick="showQuiz('math')">Math Quiz</div>
+      <div class="quiz-type" onclick="showQuiz('physics')">Physics Quiz</div>
+      <div class="quiz-type" onclick="showQuiz('chemistry')">Chemistry Quiz</div>
+      <div class="quiz-type" onclick="showQuiz('python')">Python Quiz</div>
+      <div class="quiz-type" onclick="showQuiz('clang')">C Language Quiz</div>
+    </div>
+    <div id="quiz-content" style="display: none;">
+      <!-- Quiz questions and options will be dynamically added here -->
+    </div>
+  </div>
+
+  <script src="index1.js"></script>
+</body>
+</html>
