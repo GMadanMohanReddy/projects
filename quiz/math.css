@@ -1,5 +1,6 @@
 body{
     background-color: rgb(243, 228, 211);
+    position: relative;
 }
 
 
@@ -26,10 +27,8 @@ body{
 
 
 }
-.question:hover{
-    
-}
-h3{
+
+#Que{
 
     padding: 70px 0px 30px 60px;
     font-size: 140%;
@@ -53,7 +52,125 @@ span{
 
 }
 
-label{
+/* label{
     font-size: 130%;
+} */
+
+.greetingModal{
+    display: none;
+    text-align: center;
+    /* position: fixed; */
+    box-sizing: border-box;
+    background-color: rgb(193, 196, 196);
+    /* background-image: url("./imges/SL-052720-31240-26.jpg"); */
+    background-color: rgba(193, 196, 196,.4);
+    margin:auto;
+    padding: 10px;
+    width: 450px;
+    height: 700px;
+    max-width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    z-index: 1;
+
+    
+
+    
 }
+video{
+    width:438px;
+    height: 300px;
+    
+}
+
+#congrats{
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: cyan;
+    color: blueviolet;
+    font-family: 'Poppins', sans-serif;
+
+}
+#modal{
+    justify-content: center;
+    margin: 20px;
+    padding: auto;
+    text-align:left;
+    display: flex;
+    /* gap: 40px; */
+    flex-direction: column;
+    align-items: center;
+    background-color: #fefefe;
+    
+}
+.score{
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgb(120, 193, 102);
+    height: 60px;
+    width: 60px;
+    border-style: hidden;
+    border-radius: 20%;
+    border-color: rgb(174, 180, 185);
+
+    
+    
+}
+
+/* #score,#wrong,#count{
+    box-sizing: border-box;
+    
+    display: block;
+    height: fit-content;
+    width: 10px;
+} */
+label{
+    display: inline-flex;
+    padding:15px
+}
+
+h4{
+    margin-left: 5px;
+    font-size: 120%;
+    background-color: blueviolet;
+    
+}
+/* 
+#score,#count,#wrong{
+    margin-top: 25px;
+    margin-left: 30px;
+    height: fit-content;
+    /* padding: 30px; 
+}
+#close{
+    position: static;
+} */
+
+.s_value{
+    font-size: 200%;
+    margin-top: 10px;
+}
+.message{
+    font-size: 150%;
+    margin-top: 70px;
+}
+
+.feedback p{
+    font-style: italic;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
 

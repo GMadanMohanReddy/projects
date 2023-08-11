@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MATH QUIZZY</title>
     <link rel="stylesheet" href="math.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>hello this is math quiz</h1>
@@ -36,6 +43,38 @@
         <button type="submit" id="submit">Submit</button>
       </div>
     </div>
+
+    <div id="greeting" class="greetingModal hidden">
+      <div id="modal">
+        <h3 id="congrats">CONGRATULATIONS!! you Scored</h3>
+
+        <div class="score">
+          <h5 id="s_value" class="s_value">100</h5>
+        </div>
+        <p class="message">keep going try out our new stuff!!</p>
+      </div>
+      <div class="feedback">
+        <p id="correct"></p>
+        <p id="wrong"></p>
+        <p id="unAttempted"></p>
+      </div>
+      <video src="./imges/boom_thankyou.mp4" autoplay loop></video>
+      <!-- <button id="close">home</button> -->
+    </div>
+
     <script src="./math.js"></script>
   </body>
 </html>
+
+<!-- <label for="score">
+  <h4>You Scored:</h4>
+  <span id="score">4</span>
+</label>
+<label for="wrong"
+  ><h4>Wrong Answers Selected:</h4>
+  <span id="wrong">0</span></label
+>
+<label for="count"
+  ><h4>Not Attempted:</h4>
+  <span id="count">0</span></label
+> -->

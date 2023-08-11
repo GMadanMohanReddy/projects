@@ -29,8 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const length = Object.keys(mathQuestions).length;
   const nextButton = document.getElementById("next");
   const backButton = document.getElementById("back");
+  const submitButton = document.getElementById("submit");
+  const radios = document.getElementsByName("option");
+  const greetingElement = document.getElementById("greeting");
+  const scoreElement = document.getElementById("s_value");
+  const wrongElement = document.getElementById("wrong");
+  const notAttemptedElement = document.getElementById("unAttempted");
+  const correctElement = document.getElementById("correct");
+  const modalElement = document.getElementById("greeting");
+  //const mainElement = document.getElementsByClassName("question");
+  //const radioButtons = document.querySelector("input[name='option']");
 
   let questionId = 0;
+  let score = 0;
+  let count = 0;
+  let wrong = 0;
   const questionElement = document.getElementById("Que");
   function questionContainer(questionId) {
     if (questionId === 0) {
@@ -40,9 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (questionId === length - 1) {
       nextButton.disabled = true;
+      submitButton.hidden = false;
     } else {
       nextButton.disabled = false;
+      submitButton.hidden = true;
+      greetingElement.hidden = false;
     }
+
     questionElement.innerHTML = mathQuestions[questionId].question;
     for (var i = 1; i <= 4; i++) {
       const option = document.getElementById(`option${i}`);
@@ -53,9 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   questionContainer(0);
+  // selectionHandler(0);
+  // chosenOptionHandler(0);
 
   function handleNext() {
     questionId += 1;
+
     questionContainer(questionId);
   }
 
@@ -65,12 +85,145 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   nextButton.addEventListener("click", () => {
+    // selectionHandler(questionId);
+    //chosenOptionHandler(questionId);
+
+    for (i = 0; i < 4; i++) {
+      if (radios[i].checked) {
+        mathQuestions[questionId].chosen_option = radios[i].value;
+
+        break;
+      } else {
+        mathQuestions[questionId].chosen_option = null;
+      }
+    }
+    console.log(mathQuestions[questionId].chosen_option);
     handleNext();
+
+    if (mathQuestions[questionId].chosen_option !== null) {
+      for (i = 0; i < 4; i++) {
+        if (mathQuestions[questionId].chosen_option === radios[i].value) {
+          radios[i].checked = true;
+        }
+      }
+    } else {
+      for (i = 0; i < 4; i++) {
+        radios[i].checked = false;
+      }
+    }
   });
 
   backButton.addEventListener("click", () => {
+    for (i = 0; i < 4; i++) {
+      if (radios[i].checked) {
+        mathQuestions[questionId].chosen_option = radios[i].value;
+        break;
+      } else {
+        mathQuestions[questionId].chosen_option = null;
+      }
+    }
+    // selectionHandler(questionId);
+    // chosenOptionHandler(questionId);
     handleBack();
+
+    if (mathQuestions[questionId].chosen_option !== null) {
+      for (i = 0; i < 4; i++) {
+        if (mathQuestions[questionId].chosen_option === radios[i].value) {
+          radios[i].checked = true;
+        }
+      }
+    } else {
+      for (i = 0; i < 4; i++) {
+        radios[i].checked = false;
+      }
+    }
   });
+
+  function scoreHandler() {
+    for (i = 0; i < length; i++) {
+      if (mathQuestions[i].answer === mathQuestions[i].chosen_option) {
+        score = score + 10;
+      }
+      if (mathQuestions[i].chosen_option == null) {
+        count++;
+      }
+      if (
+        mathQuestions[i].chosen_option != null &&
+        mathQuestions[i].answer !== mathQuestions[i].chosen_option
+      ) {
+        wrong++;
+      }
+    }
+    return {
+      score: score,
+      count: count,
+    };
+  }
+
+  submitButton.addEventListener("click", () => {
+    submitButton.disabled = true;
+    greetingElement.hidden = false;
+    modalElement.style.display = "block";
+    var { score, count } = scoreHandler();
+    scoreElement.innerHTML = `${score}`;
+    wrongElement.innerHTML = "QUESTIONS Wrong:" + " " + `${wrong}`;
+    notAttemptedElement.innerHTML =
+      "QUESTIONS not attempted" + " " + `${count}`;
+    correctElement.innerHTML = "QUESTIONS Correct" + " " + `${score / 10}`;
+  });
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // function selectionHandler(questionId) {
+  //   for (const radioButton of radios) {
+  //     radioButton.addEventListener("change", () => {
+  //       mathQuestions[questionId].chosen_option = radioButton.value;
+  //       console.log(
+  //         "your answer for" +
+  //           `${questionId}` +
+  //           "is" +
+  //           `${mathQuestions[questionId].chosen_option}`
+  //       );
+  //     });
+  //   }
+  // }
+
+  // function chosenOptionHandler(questionId) {
+  // }
+
+  // for (const radioButton of radios) {
+  //   radioButton.addEventListener("change", selectionHandler(questionId));
+  //   console.log(mathQuestions[questionId].chosen_option);
+  // }
+
+  // function selectionHandler() {
+  //   if (this.checked) {
+  //     mathQuestions[questionId].chosen_option = this.value;
+  //     console.log(
+  //       "chosen_option is :" + `${mathQuestions[questionId].chosen_option}`
+  //     );
+  //   }
+  // }
+
+  //  function scoreHandler() {}
+
+  // radios.addEventListener("change", selectionHandler());
+
+  // function selectionHandler() {
+  //   for (const radioButton of radios) {
+  //     radioButton.addEventListener("change",()=>{
+
+  //       if (radioButton.checked) {
+  //         mathQuestions[questionId].chosen_option = radioButton.value;
+  //       }
+
+  //     })
+
+  //   }
+  // }
 
   // function checkboxHandler() {
 
@@ -89,7 +242,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // const radioButtons = document.getElementsByName("option");
   // let currentQuestion = 0;
 
-  // let score = 0;
   // let count = 0;
 
   // questionElement.innerHTML = mathQuestions[0].question;
