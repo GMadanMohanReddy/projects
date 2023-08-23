@@ -1,9 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="score.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ScoreCard!!</title>
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Login Form</div>
+      </div>
+      <div class="form-container">
+        <div class="form-inner">
+          <form action="index.html" class="login">
+            <div class="field">
+              <input type="text" placeholder="UserName" required />
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Email Address" required />
+            </div>
+            <div class="field">
+              <input type="number" placeholder="Mobile Number" required />
+            </div>
+
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+          <!-- <form action="#" class="signup">
+            <div class="field">
+              <input type="text" placeholder="Email Address" required />
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" required />
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Confirm password" required />
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Signup" />
+            </div>
+          </form> -->
+        </div>
+      </div>
+    </div>
+    <script>
+      const loginBtn = document.querySelector("label.login");
+
+      // signupBtn.onclick = () => {
+      //   loginForm.style.marginLeft = "-50%";
+      //   loginText.style.marginLeft = "-50%";
+      // };
+      // loginBtn.onclick = () => {
+      //   window.location.href = "index.html";
+      // };
+      // // signupLink.onclick = () => {
+      //   signupBtn.click();
+      //   return false;
+      // };
+      function index() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
 </html>

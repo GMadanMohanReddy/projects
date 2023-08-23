@@ -168,14 +168,58 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreElement.innerHTML = `${score}`;
     wrongElement.innerHTML = "QUESTIONS Wrong:" + " " + `${wrong}`;
     notAttemptedElement.innerHTML =
-      "QUESTIONS not attempted" + " " + `${count}`;
-    correctElement.innerHTML = "QUESTIONS Correct" + " " + `${score / 10}`;
+      "QUESTIONS not attempted:" + " " + `${count}`;
+    correctElement.innerHTML = "QUESTIONS Correct:" + " " + `${score / 10}`;
+    smoothScrollTo(modalElement);
   });
 
   const scrollSpy = new bootstrap.ScrollSpy(document.body, {
     target: "greeting",
   });
 
+  function smoothScrollTo(target) {
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1; // Duration in milliseconds
+    let startTime = null;
+
+    function animationStep(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const easeInOutCubic = easeInOutCubicFn(
+        progress,
+        startPosition,
+        distance,
+        duration
+      );
+
+      window.scrollTo(0, easeInOutCubic);
+
+      if (progress < duration) {
+        requestAnimationFrame(animationStep);
+      }
+    }
+
+    requestAnimationFrame(animationStep);
+  }
+
+  function easeInOutCubicFn(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t * t + b;
+    t -= 2;
+    return (c / 2) * (t * t * t + 2) + b;
+  }
+
+  const homeButton = document.getElementById("HOME");
+  homeButton.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
+  const refreshButton = document.getElementById("refresh");
+  refreshButton.addEventListener("click", () => {
+    window.location.reload();
+  });
   // function selectionHandler(questionId) {
   //   for (const radioButton of radios) {
   //     radioButton.addEventListener("change", () => {

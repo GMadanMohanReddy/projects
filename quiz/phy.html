@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATH QUIZZY</title>
+    <link rel="stylesheet" href="math.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar sticky-top bg-body-tertiary">
+      <ul>
+        <img src="./imges/home.jpeg" id="refresh" alt="HOME" />
+      </ul>
+    </nav>
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p class="m-5 fs-4">
+          Hello ARE you ready to solve some crazy PHYSICS Questions
+        </p>
+      </blockquote>
+    </figure>
+    <div class="question container">
+      <h3 id="Que"></h3>
+      <ul id="optionList" class="m-4">
+        <input type="radio" name="option" id="option1" value="" /><span
+          id="optionS1"
+          >fsdfjjfk</span
+        ><br />
+        <input type="radio" name="option" id="option2" value="" /><span
+          id="optionS2"
+          >fdfdsa</span
+        >
+        <br />
+        <input type="radio" name="option" id="option3" value="" /><span
+          id="optionS3"
+          >djfkdjf</span
+        ><br />
+        <input type="radio" name="option" id="option4" value="" /><span
+          id="optionS4"
+          >djfkdjf</span
+        ><br />
+      </ul>
+      <br />
+      <div id="buttons" class="d-flex mb-3">
+        <button type="button" class="btn btn-primary p-2 m-1" id="back">
+          Back
+        </button>
+        <button type="button" class="btn btn-primary p-2 m-1" id="next">
+          Next
+        </button>
+        <button type="submit" class="btn btn-primary p-2 m-1" id="submit">
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <div id="greeting" class="greetingModal hidden container">
+      <div id="modal">
+        <h3 id="congrats">CONGRATULATIONS!! you Scored</h3>
+
+        <div class="score">
+          <h5 id="s_value" class="s_value">100</h5>
+        </div>
+        <p class="message">keep going try out our new stuff!!</p>
+      </div>
+      <div class="feedback">
+        <p id="correct"></p>
+        <p id="wrong"></p>
+        <p id="unAttempted"></p>
+      </div>
+      <!-- <video
+        class="object-fit-cover"
+        src="./imges/boom_thankyou.mp4"
+        autoplay
+        loop
+      ></video> -->
+      <!-- <button id="close">home</button> -->
+      <button class="btn btn-primary p-2 m-1" id="HOME">HOME</button>
+    </div>
+
+    <script src="./math.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!-- <label for="score">
+  <h4>You Scored:</h4>
+  <span id="score">4</span>
+</label>
+<label for="wrong"
+  ><h4>Wrong Answers Selected:</h4>
+  <span id="wrong">0</span></label
+>
+<label for="count"
+  ><h4>Not Attempted:</h4>
+  <span id="count">0</span></label
+> -->

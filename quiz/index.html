@@ -16,7 +16,7 @@
   <body>
     <nav class="navbar sticky-top bg-body-tertiary">
       <ul>
-        <li class="home"><a href="index.html">HOME</a></li>
+        <img src="./imges/home.jpeg" onclick="relod()" alt="HOME" />
       </ul>
     </nav>
     <h1 id="greeting"></h1>
@@ -29,35 +29,31 @@
         onclick="mathQuiz()"
       ></div>
       <div
-        style="background-image: url('./imges/AdobeStock_40912174_Preview.ai')"
+        style="background-image: url('./imges/phy.jpeg')"
         class="PHY"
         id="physics"
         onclick="phyQuiz()"
       ></div>
-      <div class="CHEM" id="chemistry">
-        <p>Chemistry Quiz</p>
-        Maths is quite a theoretical subject, rather it can be pressurising at
-        times. However, you can understand Mathematics concepts easily and
-        effortlessly if you practice enough. To guide you in this matter, we at
-        Vedantu have provided genera.
-      </div>
+      <div
+        style="background-image: url('./imges/chem.avif')"
+        class="CHEM"
+        id="chemistry"
+        onclick="chemQuiz()"
+      ></div>
     </div>
     <div id="types1">
-      <div class="C_LANG" id="c_lang">
-        <p>C language Quiz</p>
-        Maths is quite a theoretical subject, rather it can be pressurising at
-        times. However, you can understand Mathematics concepts easily and
-        effortlessly if you practice enough. To guide you in this matter, we at
-        Vedantu have provided general.
-      </div>
+      <div
+        class="C_LANG"
+        id="c_lang"
+        style="background-image: url('./imges/clang1.jpg')"
+        onclick="clangQuiz()"
+      ></div>
 
-      <div class="DBMS" id="dbms">
-        <p>DBMS</p>
-        Maths is quite a theoretical subject, rather it can be pressurising at
-        times. However, you can understand Mathematics concepts easily and
-        effortlessly if you practice enough. To guide you in this matter, we at
-        Vedantu have provided general.
-      </div>
+      <div
+        class="DBMS"
+        id="dbms"
+        style="background-image: './imges/dbms.jpg'"
+      ></div>
 
       <div class="OS" id="os">
         <p>OS</p>
@@ -67,6 +63,7 @@
         Vedantu have provided general.
       </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

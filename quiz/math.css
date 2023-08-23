@@ -3,10 +3,23 @@ body{
     position: relative;
 }
 
+nav{
+    height: 30px;
+    width: auto;
+    text-align:initial;
+    position: relative;
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
+    
 
+}
+nav img{
+    border-radius: 50%;
+    width: 70px;
+    margin: 20px;
+} 
 .question{
  
-     border-style:solid;
+    border-style:solid;
     
     color: #fefefe;
     height: 500px;
@@ -14,18 +27,8 @@ body{
     padding-left: 20px;
     margin: 60px;
     border-radius: 40px;
-    box-shadow: 10px 10px 40px rgb(218, 218, 218);
+    box-shadow: 10px 10px 40px rgba(135, 135, 135, 0.772) !important;
     border-style: hidden;
-   
-    
-    
-   
-   
-    
-  
-    
-    
-
 
 }
 p{
@@ -71,7 +74,8 @@ span{
     box-sizing: border-box;
   
     /* background-image: url("./imges/SL-052720-31240-26.jpg"); */
-    background-color: rgba(193, 196, 196,.4);
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
+    border-radius: 5%;
     margin:auto;
     padding: 10px;
     width: 450px;
@@ -120,7 +124,7 @@ video{
     width: 60px;
     border-style: hidden;
     border-radius: 20%;
-    border-color: rgb(174, 180, 185);
+    
 
     
     
