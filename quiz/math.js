@@ -171,11 +171,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "QUESTIONS not attempted" + " " + `${count}`;
     correctElement.innerHTML = "QUESTIONS Correct" + " " + `${score / 10}`;
   });
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
+
+  const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: "greeting",
+  });
 
   // function selectionHandler(questionId) {
   //   for (const radioButton of radios) {

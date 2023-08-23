@@ -12,12 +12,24 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>hello this is math quiz</h1>
-    <div class="question">
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p class="m-5 fs-4">
+          Hello ARE you ready to solve some crazy MATH Questions
+        </p>
+      </blockquote>
+    </figure>
+    <div class="question container">
       <h3 id="Que"></h3>
-      <ul id="optionList">
+      <ul id="optionList" class="m-4">
         <input type="radio" name="option" id="option1" value="" /><span
           id="optionS1"
           >fsdfjjfk</span
@@ -37,14 +49,20 @@
         ><br />
       </ul>
       <br />
-      <div id="buttons">
-        <button id="back">BACK</button>
-        <button id="next">NEXT</button>
-        <button type="submit" id="submit">Submit</button>
+      <div id="buttons" class="d-flex mb-3">
+        <button type="button" class="btn btn-primary p-2 m-1" id="back">
+          Back
+        </button>
+        <button type="button" class="btn btn-primary p-2 m-1" id="next">
+          Next
+        </button>
+        <button type="submit" class="btn btn-primary p-2 m-1" id="submit">
+          Submit
+        </button>
       </div>
     </div>
 
-    <div id="greeting" class="greetingModal hidden">
+    <div id="greeting" class="greetingModal hidden container">
       <div id="modal">
         <h3 id="congrats">CONGRATULATIONS!! you Scored</h3>
 
@@ -58,11 +76,21 @@
         <p id="wrong"></p>
         <p id="unAttempted"></p>
       </div>
-      <video src="./imges/boom_thankyou.mp4" autoplay loop></video>
+      <!-- <video
+        class="object-fit-cover"
+        src="./imges/boom_thankyou.mp4"
+        autoplay
+        loop
+      ></video> -->
       <!-- <button id="close">home</button> -->
     </div>
 
     <script src="./math.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
 

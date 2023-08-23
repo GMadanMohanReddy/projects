@@ -79,24 +79,44 @@ Quiz Content Styling
     margin: 10px 0;
 }
 */
+/* imageOne
+body{
+    background-color: rgb(173, 169, 169);
+    background: url('./imges/quiz1.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -3cm;
+} */
 
+body{
+    
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
+}
+h1{
+    color: aliceblue !important;
+}
 h2{
     padding: 10px;
-}
-
-
-form{
+    color: aliceblue !important;
+    margin-top: 5% !important;
     
 }
+.form-center { 
+    justify-content: center;
+}   
 input{
     padding: 10px;
     margin: 10px;
     background-color: rgb(241, 241, 238);
 }
 button{
+    position: relative;
+
     padding: 10px;
     margin: 10px;
 }
 a{
     text-decoration: none;
 }
+
+

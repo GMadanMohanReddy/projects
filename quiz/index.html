@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QUIZZY !</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
     <script src="index.js"></script>
   </head>
   <body>
-    <nav>
+    <nav class="navbar sticky-top bg-body-tertiary">
       <ul>
         <li class="home"><a href="index.html">HOME</a></li>
-        <li><a href="login.html">LOGIN</a></li>
       </ul>
     </nav>
     <h1 id="greeting"></h1>
@@ -23,13 +28,12 @@
         id="math"
         onclick="mathQuiz()"
       ></div>
-      <div class="PHY" id="physics">
-        <p>Physics Quiz</p>
-        Physics Maths is quite a theoretical subject, rather it can be
-        pressurising at times. However, you can understand Mathematics concepts
-        easily and effortlessly if you practice enough. To guide you in this
-        matter, we at Vedantu have provided general.
-      </div>
+      <div
+        style="background-image: url('./imges/AdobeStock_40912174_Preview.ai')"
+        class="PHY"
+        id="physics"
+        onclick="phyQuiz()"
+      ></div>
       <div class="CHEM" id="chemistry">
         <p>Chemistry Quiz</p>
         Maths is quite a theoretical subject, rather it can be pressurising at
@@ -63,5 +67,10 @@
         Vedantu have provided general.
       </div>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

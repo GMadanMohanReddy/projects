@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(243, 228, 211);
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
     position: relative;
 }
 
@@ -8,14 +8,15 @@ body{
  
      border-style:solid;
     
-    
+    color: #fefefe;
     height: 500px;
     width: 90%;
     padding-left: 20px;
     margin: 60px;
     border-radius: 40px;
-    box-shadow: 10px 10px 40px rgb(220, 164, 220);
+    box-shadow: 10px 10px 40px rgb(218, 218, 218);
     border-style: hidden;
+   
     
     
    
@@ -27,11 +28,18 @@ body{
 
 
 }
+p{
+    color: white;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 #Que{
 
     padding: 70px 0px 30px 60px;
-    font-size: 140%;
+    font-size: 160%;
+    color: aliceblue !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 ul{
@@ -42,7 +50,7 @@ input{
     
 }
 span{
-    font-size: 130%;
+    font-size: 150%;
 }
 
 #buttons{
@@ -61,7 +69,7 @@ span{
     text-align: center;
     /* position: fixed; */
     box-sizing: border-box;
-    background-color: rgb(193, 196, 196);
+  
     /* background-image: url("./imges/SL-052720-31240-26.jpg"); */
     background-color: rgba(193, 196, 196,.4);
     margin:auto;
@@ -71,15 +79,15 @@ span{
     max-width: 100%;
     max-width: 100%;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
 
     
 
     
 }
 video{
-    width:438px;
-    height: 300px;
+    width: fit-content;
+    height: fit-content;
     
 }
 
@@ -101,7 +109,7 @@ video{
     /* gap: 40px; */
     flex-direction: column;
     align-items: center;
-    background-color: #fefefe;
+
     
 }
 .score{
