@@ -16,7 +16,7 @@
   <body>
     <nav class="navbar sticky-top bg-body-tertiary">
       <ul>
-        <img src="./imges/home.jpeg" onclick="relod()" alt="HOME" />
+        <img src="./imges/home.jpeg" id="refresh" alt="HOME" />
       </ul>
     </nav>
     <h1 id="greeting"></h1>
@@ -26,19 +26,16 @@
         style="background-image: url('./imges/math.avif')"
         class="MATH"
         id="math"
-        onclick="mathQuiz()"
       ></div>
       <div
         style="background-image: url('./imges/phy.jpeg')"
         class="PHY"
         id="physics"
-        onclick="phyQuiz()"
       ></div>
       <div
         style="background-image: url('./imges/chem.avif')"
         class="CHEM"
         id="chemistry"
-        onclick="chemQuiz()"
       ></div>
     </div>
     <div id="types1">
@@ -46,22 +43,19 @@
         class="C_LANG"
         id="c_lang"
         style="background-image: url('./imges/clang1.jpg')"
-        onclick="clangQuiz()"
       ></div>
 
       <div
         class="DBMS"
         id="dbms"
-        style="background-image: './imges/dbms.jpg'"
+        style="background-image: url('./imges/dbms.jpg')"
       ></div>
 
-      <div class="OS" id="os">
-        <p>OS</p>
-        Maths is quite a theoretical subject, rather it can be pressurising at
-        times. However, you can understand Mathematics concepts easily and
-        effortlessly if you practice enough. To guide you in this matter, we at
-        Vedantu have provided general.
-      </div>
+      <div
+        class="OS"
+        id="os"
+        style="background-image: url('./imges/os.jpg')"
+      ></div>
     </div>
 
     <script

@@ -1,37 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const phyQuestions = {
+  const osQuestions = {
     0: {
-      question: "The absorption of ink by blotting paper involves ?",
+      question:
+        "In Operating Systems, which of the following is/are CPU scheduling algorithms ?",
       options: [
-        "viscosity of ink",
-        "capillary action phenomenon",
-        "capillary action phenomenon",
-        "siphon action",
+        "Priority",
+        "Round Robin",
+        "Shortest Job First",
+        "All of the Above",
       ],
-      answer: "capillary action phenomenon",
+      answer: "All of the Above",
       chosen_option: null,
     },
     1: {
-      question: "In what form is heavy water used in a nuclear reactor ?",
-      options: ["Coolant", "Controller", "Diluent", "Preservative"],
-      answer: "Diluent",
+      question: "What is the main function of the command interpreter ?",
+      options: [
+        "to provide the interface between the API and application program",
+        "to handle the files in the operating system",
+        " to get and execute the next user-specified command",
+        "none of the mentioned",
+      ],
+      answer: "To get and execute the next user-specified command",
       chosen_option: null,
     },
     2: {
-      question: "Which item is used in the fabrication of the transistor ?",
-      options: ["Silicon", "Silver", "Aluminium", "Copper"],
-      answer: "Silicon",
+      question:
+        "To access the services of the operating system, the interface is provided by the ___________",
+      options: [" Library", "System calls", "Assembly instructions", " API"],
+      answer: "System calls",
       chosen_option: null,
     },
     3: {
-      question: "X-rays cannot pass through what ?",
-      options: ["Skin", "Bone", "Meat", "Wood"],
-      answer: "Bone",
+      question: "CPU scheduling is the basis of ___________ ?",
+      options: [
+        "multiprogramming operating systems",
+        "larger memory sized systems",
+        "multiprocessor systems",
+        "none of the mentioned",
+      ],
+      answer: "multiprogramming operating systems",
       chosen_option: null,
     },
   };
 
-  const length = Object.keys(phyQuestions).length;
+  const length = Object.keys(osQuestions).length;
   const nextButton = document.getElementById("next");
   const backButton = document.getElementById("back");
   const submitButton = document.getElementById("submit");
@@ -65,12 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
       greetingElement.hidden = false;
     }
 
-    questionElement.innerHTML = phyQuestions[questionId].question;
+    questionElement.innerHTML = osQuestions[questionId].question;
     for (var i = 1; i <= 4; i++) {
       const option = document.getElementById(`option${i}`);
-      option.value = phyQuestions[questionId].options[i - 1];
+      option.value = osQuestions[questionId].options[i - 1];
       const spanElement = document.getElementById(`optionS${i}`);
-      spanElement.innerHTML = phyQuestions[questionId].options[i - 1];
+      spanElement.innerHTML = osQuestions[questionId].options[i - 1];
     }
   }
 
@@ -95,19 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (i = 0; i < 4; i++) {
       if (radios[i].checked) {
-        phyQuestions[questionId].chosen_option = radios[i].value;
+        osQuestions[questionId].chosen_option = radios[i].value;
 
         break;
       } else {
-        phyQuestions[questionId].chosen_option = null;
+        osQuestions[questionId].chosen_option = null;
       }
     }
-    console.log(phyQuestions[questionId].chosen_option);
+    console.log(osQuestions[questionId].chosen_option);
     handleNext();
 
-    if (phyQuestions[questionId].chosen_option !== null) {
+    if (osQuestions[questionId].chosen_option !== null) {
       for (i = 0; i < 4; i++) {
-        if (phyQuestions[questionId].chosen_option === radios[i].value) {
+        if (osQuestions[questionId].chosen_option === radios[i].value) {
           radios[i].checked = true;
         }
       }
@@ -121,19 +133,19 @@ document.addEventListener("DOMContentLoaded", () => {
   backButton.addEventListener("click", () => {
     for (i = 0; i < 4; i++) {
       if (radios[i].checked) {
-        phyQuestions[questionId].chosen_option = radios[i].value;
+        osQuestions[questionId].chosen_option = radios[i].value;
         break;
       } else {
-        phyQuestions[questionId].chosen_option = null;
+        osQuestions[questionId].chosen_option = null;
       }
     }
     // selectionHandler(questionId);
     // chosenOptionHandler(questionId);
     handleBack();
 
-    if (phyQuestions[questionId].chosen_option !== null) {
+    if (osQuestions[questionId].chosen_option !== null) {
       for (i = 0; i < 4; i++) {
-        if (phyQuestions[questionId].chosen_option === radios[i].value) {
+        if (osQuestions[questionId].chosen_option === radios[i].value) {
           radios[i].checked = true;
         }
       }
@@ -146,15 +158,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function scoreHandler() {
     for (i = 0; i < length; i++) {
-      if (phyQuestions[i].answer === phyQuestions[i].chosen_option) {
+      if (osQuestions[i].answer === osQuestions[i].chosen_option) {
         score = score + 10;
       }
-      if (phyQuestions[i].chosen_option == null) {
+      if (osQuestions[i].chosen_option == null) {
         count++;
       }
       if (
-        phyQuestions[i].chosen_option != null &&
-        phyQuestions[i].answer !== phyQuestions[i].chosen_option
+        osQuestions[i].chosen_option != null &&
+        osQuestions[i].answer !== osQuestions[i].chosen_option
       ) {
         wrong++;
       }

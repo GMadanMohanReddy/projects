@@ -1,37 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const phyQuestions = {
+  const dbmsQuestions = {
     0: {
-      question: "The absorption of ink by blotting paper involves ?",
+      question: "Which of the following is the full form of DDL ?",
       options: [
-        "viscosity of ink",
-        "capillary action phenomenon",
-        "capillary action phenomenon",
-        "siphon action",
+        "Data Definition Language",
+        "Data Derivation Language",
+        "Dynamic Data Language",
+        "Detailed Data Langauge",
       ],
-      answer: "capillary action phenomenon",
+      answer: "Data Definition Language",
       chosen_option: null,
     },
     1: {
-      question: "In what form is heavy water used in a nuclear reactor ?",
-      options: ["Coolant", "Controller", "Diluent", "Preservative"],
-      answer: "Diluent",
+      question:
+        "Which of the following is the property of transaction that protects data from system failure ?",
+      options: ["Atomicity", "Isolation", "Durability", "Consistency"],
+      answer: "Durability",
       chosen_option: null,
     },
     2: {
-      question: "Which item is used in the fabrication of the transistor ?",
-      options: ["Silicon", "Silver", "Aluminium", "Copper"],
-      answer: "Silicon",
+      question:
+        "Which normalization form is based on the transitive dependency ?",
+      options: ["1NF", "2NF", "3NF", "BCNF"],
+      answer: "3NF",
       chosen_option: null,
     },
     3: {
-      question: "X-rays cannot pass through what ?",
-      options: ["Skin", "Bone", "Meat", "Wood"],
-      answer: "Bone",
+      question:
+        "Which is the lowest level of abstraction that describes how the data are actually stored ?",
+      options: ["Physical", "Abstract", "View", "User"],
+      answer: "Physical",
       chosen_option: null,
     },
   };
 
-  const length = Object.keys(phyQuestions).length;
+  const length = Object.keys(dbmsQuestions).length;
   const nextButton = document.getElementById("next");
   const backButton = document.getElementById("back");
   const submitButton = document.getElementById("submit");
@@ -65,12 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
       greetingElement.hidden = false;
     }
 
-    questionElement.innerHTML = phyQuestions[questionId].question;
+    questionElement.innerHTML = dbmsQuestions[questionId].question;
     for (var i = 1; i <= 4; i++) {
       const option = document.getElementById(`option${i}`);
-      option.value = phyQuestions[questionId].options[i - 1];
+      option.value = dbmsQuestions[questionId].options[i - 1];
       const spanElement = document.getElementById(`optionS${i}`);
-      spanElement.innerHTML = phyQuestions[questionId].options[i - 1];
+      spanElement.innerHTML = dbmsQuestions[questionId].options[i - 1];
     }
   }
 
@@ -95,19 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (i = 0; i < 4; i++) {
       if (radios[i].checked) {
-        phyQuestions[questionId].chosen_option = radios[i].value;
+        dbmsQuestions[questionId].chosen_option = radios[i].value;
 
         break;
       } else {
-        phyQuestions[questionId].chosen_option = null;
+        dbmsQuestions[questionId].chosen_option = null;
       }
     }
-    console.log(phyQuestions[questionId].chosen_option);
+    console.log(dbmsQuestions[questionId].chosen_option);
     handleNext();
 
-    if (phyQuestions[questionId].chosen_option !== null) {
+    if (dbmsQuestions[questionId].chosen_option !== null) {
       for (i = 0; i < 4; i++) {
-        if (phyQuestions[questionId].chosen_option === radios[i].value) {
+        if (dbmsQuestions[questionId].chosen_option === radios[i].value) {
           radios[i].checked = true;
         }
       }
@@ -121,19 +124,19 @@ document.addEventListener("DOMContentLoaded", () => {
   backButton.addEventListener("click", () => {
     for (i = 0; i < 4; i++) {
       if (radios[i].checked) {
-        phyQuestions[questionId].chosen_option = radios[i].value;
+        dbmsQuestions[questionId].chosen_option = radios[i].value;
         break;
       } else {
-        phyQuestions[questionId].chosen_option = null;
+        dbmsQuestions[questionId].chosen_option = null;
       }
     }
     // selectionHandler(questionId);
     // chosenOptionHandler(questionId);
     handleBack();
 
-    if (phyQuestions[questionId].chosen_option !== null) {
+    if (dbmsQuestions[questionId].chosen_option !== null) {
       for (i = 0; i < 4; i++) {
-        if (phyQuestions[questionId].chosen_option === radios[i].value) {
+        if (dbmsQuestions[questionId].chosen_option === radios[i].value) {
           radios[i].checked = true;
         }
       }
@@ -146,15 +149,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function scoreHandler() {
     for (i = 0; i < length; i++) {
-      if (phyQuestions[i].answer === phyQuestions[i].chosen_option) {
+      if (dbmsQuestions[i].answer === dbmsQuestions[i].chosen_option) {
         score = score + 10;
       }
-      if (phyQuestions[i].chosen_option == null) {
+      if (dbmsQuestions[i].chosen_option == null) {
         count++;
       }
       if (
-        phyQuestions[i].chosen_option != null &&
-        phyQuestions[i].answer !== phyQuestions[i].chosen_option
+        dbmsQuestions[i].chosen_option != null &&
+        dbmsQuestions[i].answer !== dbmsQuestions[i].chosen_option
       ) {
         wrong++;
       }

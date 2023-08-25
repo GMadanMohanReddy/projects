@@ -1,37 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const phyQuestions = {
+  const chemQuestions = {
     0: {
-      question: "The absorption of ink by blotting paper involves ?",
+      question: "What is the most common isotope of hydrogen ?",
       options: [
-        "viscosity of ink",
-        "capillary action phenomenon",
-        "capillary action phenomenon",
-        "siphon action",
+        "Protium",
+        "Deuterium",
+        "Tritum",
+        "Hydrogen only has one isotope!",
       ],
-      answer: "capillary action phenomenon",
+      answer: "Protium",
       chosen_option: null,
     },
     1: {
-      question: "In what form is heavy water used in a nuclear reactor ?",
-      options: ["Coolant", "Controller", "Diluent", "Preservative"],
-      answer: "Diluent",
+      question: "Which of these elements is a nonmetal ?",
+      options: ["Sulfur", "Manganese", "Aluminum", "Beryllium"],
+      answer: "Sulfur",
       chosen_option: null,
     },
     2: {
-      question: "Which item is used in the fabrication of the transistor ?",
-      options: ["Silicon", "Silver", "Aluminium", "Copper"],
-      answer: "Silicon",
+      question: "The symbol Ag stands for which element",
+      options: ["Gallium", "Magnesium", "Gold", "Silver"],
+      answer: "Silver",
       chosen_option: null,
     },
     3: {
-      question: "X-rays cannot pass through what ?",
-      options: ["Skin", "Bone", "Meat", "Wood"],
-      answer: "Bone",
+      question:
+        "What do you call an atom that has more protons than electrons ?",
+      options: ["A molecule", "An isotope", "An anion", "A cation"],
+      answer: "A cation",
       chosen_option: null,
     },
   };
 
-  const length = Object.keys(phyQuestions).length;
+  const length = Object.keys(chemQuestions).length;
   const nextButton = document.getElementById("next");
   const backButton = document.getElementById("back");
   const submitButton = document.getElementById("submit");
@@ -65,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
       greetingElement.hidden = false;
     }
 
-    questionElement.innerHTML = phyQuestions[questionId].question;
+    questionElement.innerHTML = chemQuestions[questionId].question;
     for (var i = 1; i <= 4; i++) {
       const option = document.getElementById(`option${i}`);
-      option.value = phyQuestions[questionId].options[i - 1];
+      option.value = chemQuestions[questionId].options[i - 1];
       const spanElement = document.getElementById(`optionS${i}`);
-      spanElement.innerHTML = phyQuestions[questionId].options[i - 1];
+      spanElement.innerHTML = chemQuestions[questionId].options[i - 1];
     }
   }
 
@@ -95,19 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (i = 0; i < 4; i++) {
       if (radios[i].checked) {
-        phyQuestions[questionId].chosen_option = radios[i].value;
+        chemQuestions[questionId].chosen_option = radios[i].value;
 
         break;
       } else {
-        phyQuestions[questionId].chosen_option = null;
+        chemQuestions[questionId].chosen_option = null;
       }
     }
-    console.log(phyQuestions[questionId].chosen_option);
+    console.log(chemQuestions[questionId].chosen_option);
     handleNext();
 
-    if (phyQuestions[questionId].chosen_option !== null) {
+    if (chemQuestions[questionId].chosen_option !== null) {
       for (i = 0; i < 4; i++) {
-        if (phyQuestions[questionId].chosen_option === radios[i].value) {
+        if (chemQuestions[questionId].chosen_option === radios[i].value) {
           radios[i].checked = true;
         }
       }
@@ -121,19 +122,19 @@ document.addEventListener("DOMContentLoaded", () => {
   backButton.addEventListener("click", () => {
     for (i = 0; i < 4; i++) {
       if (radios[i].checked) {
-        phyQuestions[questionId].chosen_option = radios[i].value;
+        chemQuestions[questionId].chosen_option = radios[i].value;
         break;
       } else {
-        phyQuestions[questionId].chosen_option = null;
+        chemQuestions[questionId].chosen_option = null;
       }
     }
     // selectionHandler(questionId);
     // chosenOptionHandler(questionId);
     handleBack();
 
-    if (phyQuestions[questionId].chosen_option !== null) {
+    if (chemQuestions[questionId].chosen_option !== null) {
       for (i = 0; i < 4; i++) {
-        if (phyQuestions[questionId].chosen_option === radios[i].value) {
+        if (chemQuestions[questionId].chosen_option === radios[i].value) {
           radios[i].checked = true;
         }
       }
@@ -146,15 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function scoreHandler() {
     for (i = 0; i < length; i++) {
-      if (phyQuestions[i].answer === phyQuestions[i].chosen_option) {
+      if (chemQuestions[i].answer === chemQuestions[i].chosen_option) {
         score = score + 10;
       }
-      if (phyQuestions[i].chosen_option == null) {
+      if (chemQuestions[i].chosen_option == null) {
         count++;
       }
       if (
-        phyQuestions[i].chosen_option != null &&
-        phyQuestions[i].answer !== phyQuestions[i].chosen_option
+        chemQuestions[i].chosen_option != null &&
+        chemQuestions[i].answer !== chemQuestions[i].chosen_option
       ) {
         wrong++;
       }
@@ -223,6 +224,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
   const refreshButton = document.getElementById("refresh");
   refreshButton.addEventListener("click", () => {
     window.location.reload();
